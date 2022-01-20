@@ -6,7 +6,7 @@ import glob
 path = os.getcwd()
 file = glob.glob(os.path.join(path, "*.xlsx"))
 file_name = file[0].split("\\")[-1]
-xls = ExcelFile("AWL Orders V1 Simplified.xlsx")
+xls = ExcelFile(file_name)
 
 #handle the trialtypes file
 with open("trialtypes.txt") as f:
