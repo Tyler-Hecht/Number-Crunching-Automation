@@ -9,7 +9,11 @@ To run, just run the python file ("py orders_automation.py") in the command prom
 
 This requires pandas and openpyxl to be installed
 
+
 Things that aren't implemented but can be done:
+
 -Allow for sheets with order numbers in the double digits (e.g. "Order 10")
+
 -Automatically create a trialtypes file given configurations of fps and fpt (and maybe windows)
+
 -Other stuff that I haven't thought of yet
