@@ -1,5 +1,5 @@
 # orders_automation
-Just place this file in a folder along with the .xlsx file and the trialtypes file ("trialtypes.txt")
+Just place the .py file in a folder along with the .xlsx file and the trialtypes file ("trialtypes.txt")
 
 There should be only one .xlsx file in the folder!
 
