@@ -6,8 +6,8 @@ There should be only one .xlsx file in the folder!
 The sheets of the xlsx file should be named something like "Order 1"
 
 To use, you can run the run.bat file
-This requires pandas and openpyxl to be installed
 
+The code requires pandas and openpyxl to be installed
 
 Things that aren't implemented but can be done:
 
