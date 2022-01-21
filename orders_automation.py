@@ -1,4 +1,5 @@
 from pandas import *
+import openpyxl
 import os
 import glob
 
@@ -13,10 +14,11 @@ with open("trialtypes.txt") as f:
     txt = f.readlines()
 trial_types = {}
 for line in txt:
+    # ignores the lines about frames
     if line[0] != "F":
        trial_types[line.split()[1]] = line.split()[0]
 
-# the ol' switcheroo
+# replaces "R" with "L" and vice versa
 def mirror(str: str) -> str:
     new_str = ""
     for char in str:
