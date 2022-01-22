@@ -30,12 +30,13 @@ def mirror(str: str) -> str:
             new_str += char
     return new_str
 
-# does the stuff
+# iterates over every sheet (order)
 for sheet in xls.sheet_names:
+    # converts the sheet to a dictionary
     df = xls.parse(sheet)
     bad_dict = (df.to_dict())
 
-    # there's probably a better way to do this but it works
+    # creates a list of the cells in the two relevant columns
     trial_type = []
     participant_looking_location = []
     for key in bad_dict["Trial Type"]:
@@ -43,9 +44,9 @@ for sheet in xls.sheet_names:
     for key in bad_dict["Participant Looking Location"]:
         participant_looking_location.append(bad_dict["Participant Looking Location"][key])
 
+    # builds the txt file
     text = ""
     i = 0
-    # important stuff
     for trial in trial_type:
         text += mirror(participant_looking_location[i]) + " " + str(trial_types[trial]) + "\n"
         i += 1
