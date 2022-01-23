@@ -17,4 +17,4 @@ Things that aren't implemented but can be done:
 
 -Automatically create a trialtypes file given configurations of fps and fpt (and maybe windows)
 
--Other stuff that I haven't thought of yet
+-Anything else as needed
