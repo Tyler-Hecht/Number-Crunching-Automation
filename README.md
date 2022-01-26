@@ -4,9 +4,11 @@ There should be only one .xlsx file in the folder!\
 The sheets of the xlsx file should be named something like "Order 1"\
 The run.bat file runs the code on windows\
 On Mac, run it in the command line\
-The code requires pandas and openpyxl to be installed
+The code requires pandas and openpyxl to be installed\
+https://docs.google.com/document/d/1JsoOqCrEiQR5yZAeYqF3bkqD98ZqVKnAxpcHRrpPFv4/edit?usp=sharing
 
 # For xlsx_to_txt:
 Place the .py file in a folder with all the participant .xlsx files\
 Run it in the command line and choose which version(s) you want to be converted\
-The code requires pandas and openpyxl to be installed
+The code requires pandas and openpyxl to be installed\
+https://docs.google.com/document/d/1KswgugidzVNJiaJRSEmtH2y5QZ0NhCjInWmxdRvbUf4/edit?usp=sharing
