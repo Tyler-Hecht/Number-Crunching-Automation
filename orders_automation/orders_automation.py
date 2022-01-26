@@ -73,7 +73,7 @@ for sheet in xls.sheet_names:
         try:
             text += str(trial_types[trial]) + "\n"
         except:
-            print("ERROR: Trial type found in .xlsx file which is not recognized by participants.txt")
+            print("ERROR: Trial type found in .xlsx file which is not recognized by trialtypes.txt")
             exit()
     
     # creates a txt file
