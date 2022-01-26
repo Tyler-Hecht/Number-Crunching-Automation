@@ -49,16 +49,16 @@ def mirror(str: str) -> str:
 # iterates over every sheet (order)
 for sheet in xls.sheet_names:
     # makes sure the sheet is named correctly
-    if not "Order" in sheet:
+    if not "order" in sheet.lower():
         print("ERROR: sheet in .xlsx file named incorrectly. Make sure all the sheets are named \"Order i\" such that i is a single digit.")
         exit()
     # converts the sheet to a dataframe
     df = xls.parse(sheet)
 
-    # creates a list of the cells in the two relevant columns
+    # detects errors in the column names
     try:
-        trial_type = df["Trial Type"]
-        participant_looking_location = df["Participant Looking Location"]
+        df["Trial Type"]
+        df["Participant Looking Location"]
     except:
         print("Columns in .xlsx file named incorrectly. Make sure to call the second and third columns \"Trial Type\" and \"Participant Looking Location\", respectively.")
         exit()
@@ -66,8 +66,8 @@ for sheet in xls.sheet_names:
     # builds the txt file
     text = ""
     i = 0
-    for trial in trial_type:
-        text += mirror(participant_looking_location[i].upper()) + " "
+    for trial in df["Trial Type"]:
+        text += mirror(df["Participant Looking Location"][i].upper()) + " "
         i += 1
         # finds errors in column names
         try:
