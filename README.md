@@ -8,5 +8,5 @@ The code requires pandas and openpyxl to be installed
 
 # For xlsx_to_txt:
 Place the .py file in a folder with all the participant .xlsx files\
-Run it in the command line
+Run it in the command line\
 The code requires pandas and openpyxl to be installed
