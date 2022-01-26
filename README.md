@@ -4,4 +4,4 @@ There should be only one .xlsx file in the folder!\
 The sheets of the xlsx file should be named something like "Order 1"\
 The run.bat file runs the code on windows\
 On Mac, run it in the command line\
-The code requires pandas and openpyxl to be installed\
+The code requires pandas and openpyxl to be installed
