@@ -68,6 +68,6 @@ def mass_convert_xlsx(version: str):
             f.write(text)
 
 # runs the program
-mass_convert_xlsx(input("V1, V2, or both?"))
+mass_convert_xlsx(input("V1, V2, or both?").upper())
 
-print(complete)
+print("complete")
