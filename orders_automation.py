@@ -52,18 +52,13 @@ for sheet in xls.sheet_names:
     if not "Order" in sheet:
         print("ERROR: sheet in .xlsx file named incorrectly. Make sure all the sheets are named \"Order i\" such that i is a single digit.")
         exit()
-    # converts the sheet to a dictionary
+    # converts the sheet to a dataframe
     df = xls.parse(sheet)
-    bad_dict = (df.to_dict())
 
     # creates a list of the cells in the two relevant columns
-    trial_type = []
-    participant_looking_location = []
     try:
-        for key in bad_dict["Trial Type"]:
-            trial_type.append(bad_dict["Trial Type"][key])
-        for key in bad_dict["Participant Looking Location"]:
-            participant_looking_location.append(bad_dict["Participant Looking Location"][key])
+        trial_type = df["Trial Type"]
+        participant_looking_location = df["Participant Looking Location"]
     except:
         print("Columns in .xlsx file named incorrectly. Make sure to call the second and third columns \"Trial Type\" and \"Participant Looking Location\", respectively.")
         exit()
@@ -72,7 +67,7 @@ for sheet in xls.sheet_names:
     text = ""
     i = 0
     for trial in trial_type:
-        text += mirror(participant_looking_location[i]) + " "
+        text += mirror(participant_looking_location[i].upper()) + " "
         i += 1
         # finds errors in column names
         try:
