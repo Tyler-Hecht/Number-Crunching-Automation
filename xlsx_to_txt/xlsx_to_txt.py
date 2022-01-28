@@ -21,8 +21,11 @@ def mass_convert_xlsx(version: str):
         # gets the file name
         name = file.split("\\")[-1]
         name_components = name.split("_")
-        # this will only work for a name like "18TH_AWL_V1_completed.xlsx"
-        new_name = name_components[0] + "_" + name_components[1] + "_" + name_components[2] + ".txt"
+        # create new name
+        if name_components[2] in ["V1", "V2"]:
+            new_name = name_components[0] + "_" + name_components[1] + "_" + name_components[2] + ".txt"
+        else:
+            new_name = name_components[0] + "_" + name_components[1] + ".txt"
             
         # creates a dataframe (df)
         xls = ExcelFile(name)
@@ -65,6 +68,6 @@ def mass_convert_xlsx(version: str):
             f.write(text)
 
 # runs the program
-mass_convert_xlsx(input("V1, V2, both? If this doesn't apply, type 0"))
+mass_convert_xlsx(input("V1, V2, or both? If this doesn't apply, type 0"))
 
 print("complete")
