@@ -22,7 +22,7 @@ def mass_convert_xlsx(version: str):
         name = file.split("\\")[-1]
         name_components = name.split("_")
         # create new name
-        if name_components[2] in ["V1", "V2"]:
+        if len(name_components) > 2 and name_components[2] in ["V1", "V2"]:
             new_name = name_components[0] + "_" + name_components[1] + "_" + name_components[2] + ".txt"
         else:
             new_name = name_components[0] + "_" + name_components[1] + ".txt"
