@@ -17,4 +17,5 @@ https://docs.google.com/document/d/1KswgugidzVNJiaJRSEmtH2y5QZ0NhCjInWmxdRvbUf4/
 ## For participants_automation
 Place the .py file in the same folder as the xlsx_to_txt stuff\
 Run it in the command line, and it will create the participants.txt file\
-The xlsx_to_txt file must have been run before this so that it has those .txt files to reference
+The xlsx_to_txt file must have been run before this so that it has those .txt files to reference\
+https://docs.google.com/document/d/1Nc25EoXZEdtvL0Z5UmDAhBuFlqzP_m-i1Tpdxwx4kaU/edit?usp=sharing
