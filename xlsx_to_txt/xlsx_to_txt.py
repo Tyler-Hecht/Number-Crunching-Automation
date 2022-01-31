@@ -16,12 +16,17 @@ def mass_convert_xlsx(version: str):
     if not files:
         print("ERROR: No .xlsx files detected in folder")
         exit()
-    # iterates over every file again, this time actually doing the conversion
+    # makes sure the order sheet file (used in participants_automation) isn't included
+    new_files = []
     for file in files:
+        if not ("order" in file and "sheet" in file):
+            new_files.append(file)
+    # iterates over every file again, this time actually doing the conversion
+    for file in new_files:
         # gets the file name
         name = file.split("\\")[-1]
         name_components = name.split("_")
-        # create new name
+        # create the new file name (based on whether or not it has a version)
         if len(name_components) > 2 and name_components[2] in ["V1", "V2"]:
             new_name = name_components[0] + "_" + name_components[1] + "_" + name_components[2] + ".txt"
         else:
