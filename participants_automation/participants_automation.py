@@ -57,3 +57,5 @@ for file in txt_files:
 # writes the .txt file
 with open("Participants.txt", 'w') as f:
     f.write(txt[:-1])
+    
+print("Completed")
