@@ -5,8 +5,7 @@ This code requires pandas and openpyxl to be installed
 Place the .py and .bat file in a folder along with the .xlsx file and the trialtypes file ("trialtypes.txt")\
 There should be only one .xlsx file in the folder!\
 The sheets of the xlsx file should be named something like "Order 1"\
-The run.bat file runs the code on windows\
-On Mac, run it in the command line\
+Run the .py file in the command line
 https://docs.google.com/document/d/1JsoOqCrEiQR5yZAeYqF3bkqD98ZqVKnAxpcHRrpPFv4/edit?usp=sharing
 
 ## For xlsx_to_txt:
