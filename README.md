@@ -1,8 +1,14 @@
 # Important:
 This code requires pandas and openpyxl to be installed
 
+## For trialtypes_automation:
+Place the .py file in a folder the .xlsx file
+There should be only one .xlsx file in the folder!\
+Run the .py file in the command line and input the necessary information.
+https://docs.google.com/document/d/1KUqabHZf-KMqpxJxW8GNykQqa3iLj0uzsm2gADNoUAQ/edit?usp=sharing
+
 ## For orders_automation:
-Place the .py and .bat file in a folder along with the .xlsx file and the trialtypes file ("trialtypes.txt")\
+Place the .py file in the same folder as the trial_types stuff
 There should be only one .xlsx file in the folder!\
 The sheets of the xlsx file should be named something like "Order 1"\
 Run the .py file in the command line\
