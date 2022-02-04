@@ -58,4 +58,4 @@ for file in txt_files:
 with open("Participants.txt", 'w') as f:
     f.write(txt[:-1])
     
-print("Complete")
+print("Participants.txt created")

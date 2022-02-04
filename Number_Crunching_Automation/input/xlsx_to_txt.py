@@ -75,4 +75,4 @@ def mass_convert_xlsx(version: str):
 # runs the program
 mass_convert_xlsx(input("V1, V2, or both? If this doesn't apply, type 0"))
 
-print("Complete")
+print(".xlsx files converted to .txt")

@@ -9,12 +9,12 @@ file = glob.glob(os.path.join(path, "*.xlsx"))
 # handles errors with xlsx file
 if len(file) == 0:
     print("ERROR: No .xlsx files found")
-    exit()
+    exit(1)
 if len(file) > 1:
     # allows the .xlsx file to be open while running the program
     if not (len(file) == 2 and (file[0].split("\\")[-1] == file[1].split("\\")[-1][2:])):
         print("ERROR: Multiple .xlsx files in folder")
-        exit()
+        exit(1)
 # if no errors
 file_name = file[0].split("\\")[-1]
 xls = ExcelFile(file_name)
@@ -28,7 +28,6 @@ for sheet in xls.sheet_names:
         if not row in tt_dict:
             tt_dict[row] = i
             i += 1
-print(tt_dict)
 
 # asks for user input
 fps = input("Frames per second?")
@@ -48,7 +47,7 @@ if windows == "0":
             # detect error in window formatting
             if not ":" in window:
                 print("ERROR: Window not formatted correctly")
-                exit()
+                exit(1)
             else:
                 window_dict[key] = window
 if windows == "1":
@@ -57,7 +56,7 @@ if windows == "1":
     # detect error in window formatting
     if not ":" in window:
         print("ERROR: Window not formatted correctly")
-        exit()
+        exit(1)
     for key in tt_dict:
         window_dict[key] = window
 
@@ -72,3 +71,5 @@ for key in tt_dict:
 # writes the .txt file
 with open("trialtypes.txt", 'w') as f:
     f.write(txt[:-1])
+
+print("trialtypes file created")
