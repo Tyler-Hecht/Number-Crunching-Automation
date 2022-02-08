@@ -1,7 +1,7 @@
 #!/bin/bash
 cd orders 
-python3 ./trialtypes_automation.py 
-python3 ./orders_automation.py 
+python3 trialtypes_automation.py 
+python3 orders_automation.py 
 cd .. 
 cd input 
 python3 xlsx_to_txt.py 
