@@ -7,7 +7,7 @@ def mass_convert_xlsx(version: str):
     path = os.getcwd()
     # handles the user input by finding specific files
     if version.upper() in ["V1", "V2"]:
-        files = glob.glob(os.path.join(path, "*_" + version + "*.xlsx"))
+        files = glob.glob(os.path.join(path, "*_" + version.upper() + "*.xlsx"))
     elif version.lower() == "both":
         files = glob.glob(os.path.join(path, "*_V1*.xlsx")) + glob.glob(os.path.join(path, "*_V2*.xlsx"))
     else:
