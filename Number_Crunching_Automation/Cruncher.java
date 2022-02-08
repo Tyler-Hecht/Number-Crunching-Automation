@@ -31,12 +31,7 @@ public class Cruncher{
 			boolean txtInput;
 			createOutputFolders();
 
-			System.out.println("\nIs input in (1).rtfd files or (2).txt files? Enter 1 or 2:");
-			String f = System.console().readLine();
-			if (f.compareTo("1") == 0)
-				txtInput = false;
-			else 
-				txtInput = true;
+			txtInput = true; //made this true by default since only txt files are used now
 
 			System.out.println("\nWould you like to perform window analysis? Enter Y/N:");
 			String w = System.console().readLine();
