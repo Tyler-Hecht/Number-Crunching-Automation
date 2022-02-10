@@ -1,14 +1,14 @@
 #!/bin/bash
 cd orders 
-python3 trialtypes_automation.py 
+python3 trialtypes_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-python3 orders_automation.py 
+python3 orders_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
 cd .. 
 cd input 
-python3 xlsx_to_txt.py 
+python3 xlsx_to_txt_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-python3 participants_automation.py 
+python3 participants_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
 cd .. 
 javac Cruncher.java 
