@@ -35,8 +35,13 @@ for id in df["Participant #"]:
     dict[id] = df["Order"][i]
     i += 1
 
-# get all the participant .txt files
-txt_files = sorted(glob.glob(os.path.join(path, "*.txt")))
+# get all the participant .txt files, removing Participants.txt
+files = []
+for file in glob.glob(os.path.join(path, "*.txt")):
+    if not "Participants.txt" in file:
+        files.append(file)
+# for some reason this works to sort by participant ID
+txt_files = sorted(files, key=lambda x: int("".join([i for i in x.split("//")[-1].split("_")[0] if i.isdigit()])))
 # if there aren't any
 if len(txt_files) == 0:
     print("ERROR: No .txt files found")
