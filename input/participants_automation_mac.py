@@ -5,7 +5,7 @@ import glob
 
 # get the participants orders sheet
 path = os.getcwd()
-xlsx_files = glob.glob(os.path.join(path, "*.xlsx"))
+xlsx_files = sorted(glob.glob(os.path.join(path, "*.xlsx")))
 order_sheets = []
 try:
     for file in xlsx_files:
