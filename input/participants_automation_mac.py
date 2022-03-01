@@ -36,7 +36,7 @@ for id in df["Participant #"]:
     i += 1
 
 # get all the participant .txt files
-txt_files = glob.glob(os.path.join(path, "*.txt"))
+txt_files = sorted(glob.glob(os.path.join(path, "*.txt")))
 # if there aren't any
 if len(txt_files) == 0:
     print("ERROR: No .txt files found")
