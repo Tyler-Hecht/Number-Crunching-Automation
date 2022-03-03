@@ -15,11 +15,11 @@ try:
 # if there aren't any .xlsx files
 except:
     print("ERROR: No .xlsx files found")
-    exit()
+    exit(1)
 # makes sure there's only one order sheet
 if len(order_sheets) == 0:
     print("ERROR: No order sheet found. Make sure it is an .xlsx containing the words \"order\" and \"sheet\".")
-    exit()
+    exit(1)
 if len(order_sheets) > 1:
     # allows the .xlsx file to be open while running the program
     if not (len(order_sheets) == 2 and (order_sheets[0].split("/")[-1] == order_sheets[1].split("/")[-1][2:])):
