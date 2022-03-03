@@ -14,7 +14,7 @@ def mass_convert_xlsx():
     # if there aren't any .xlsx files in the folder
     if not files:
         print("ERROR: No .xlsx files detected in folder")
-        exit()
+        exit(1)
     # iterates over every file again, this time actually doing the conversion
     for file in files:
         # gets the file name
