@@ -9,12 +9,12 @@ file = glob.glob(os.path.join(path, "*.xlsx"))
 # handles errors with xlsx file
 if len(file) == 0:
     print("ERROR: No .xlsx files found")
-    exit()
+    exit(1)
 if len(file) > 1:
     # allows the .xlsx file to be open while running the program
     if not (len(file) == 2 and (file[0].split("\\")[-1] == file[1].split("\\")[-1][2:])):
         print("ERROR: Multiple .xlsx files in folder")
-        exit()
+        exit(1)
 # if no errors
 file_name = file[0].split("\\")[-1]
 xls = ExcelFile(file_name)
@@ -26,7 +26,7 @@ try:
 # if there is no trialtypes.txt
 except:
     print("ERROR: trialtypes.txt not found. Make sure the file is properly named.")
-    exit()
+    exit(1)
 # gets the important information from trialtypes.txt
 trial_types = {}
 for line in txt:
@@ -51,7 +51,7 @@ for sheet in xls.sheet_names:
     # makes sure the sheet is named correctly
     if not "order" in sheet.lower():
         print("ERROR: sheet in .xlsx file named incorrectly. Make sure all the sheets are named \"Order i\" such that i is a single digit.")
-        exit()
+        exit(1)
     # converts the sheet to a dataframe
     df = xls.parse(sheet)
 
@@ -74,7 +74,7 @@ for sheet in xls.sheet_names:
             text += str(trial_types[trial]) + "\n"
         except:
             print("ERROR: Trial type found in .xlsx file which is not recognized by trialtypes.txt")
-            exit()
+            exit(1)
     
     # creates a txt file
     name = "order" + sheet[-1] + ".txt"
