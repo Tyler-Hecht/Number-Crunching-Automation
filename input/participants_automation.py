@@ -15,7 +15,7 @@ try:
 # if there aren't any .xlsx files
 except:
     print("ERROR: No .xlsx files found")
-    exit()
+    exit(1)
 # makes sure there's only one order sheet
 if len(order_sheets) == 0:
     print("ERROR: No order sheet found. Make sure it is an .xlsx containing the words \"order\" and \"sheet\".")
