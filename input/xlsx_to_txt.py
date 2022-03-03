@@ -3,26 +3,20 @@ import openpyxl
 import os
 import glob
 
-def mass_convert_xlsx(version: str):
+def mass_convert_xlsx():
     path = os.getcwd()
+    files = []
     # handles the user input by finding specific files
-    if version.upper() in ["V1", "V2"]:
-        files = glob.glob(os.path.join(path, "*_" + version.upper() + "*.xlsx"))
-    elif version.lower() == "both":
-        files = glob.glob(os.path.join(path, "*_V1*.xlsx")) + glob.glob(os.path.join(path, "*_V2*.xlsx"))
-    else:
-        files = glob.glob(os.path.join(path, "*.xlsx"))
+    for file in glob.glob(os.path.join(path, "*.xlsx")):
+        # makes sure the order sheet file (used in participants_automation) isn't included
+        if not ("order" in file.lower() and "sheet" in file.lower()):
+            files.append(file)
     # if there aren't any .xlsx files in the folder
     if not files:
         print("ERROR: No .xlsx files detected in folder")
         exit()
-    # makes sure the order sheet file (used in participants_automation) isn't included
-    new_files = []
-    for file in files:
-        if not ("order" in file and "sheet" in file):
-            new_files.append(file)
     # iterates over every file again, this time actually doing the conversion
-    for file in new_files:
+    for file in files:
         # gets the file name
         name = file.split("\\")[-1]
         name_components = name.split("_")
@@ -30,6 +24,7 @@ def mass_convert_xlsx(version: str):
         if len(name_components) > 2 and name_components[2] in ["V1", "V2"]:
             new_name = name_components[0] + "_" + name_components[1] + "_" + name_components[2] + ".txt"
         else:
+            print(name_components)
             new_name = name_components[0] + "_" + name_components[1] + ".txt"
             
         # creates a dataframe (df)
@@ -73,6 +68,6 @@ def mass_convert_xlsx(version: str):
             f.write(text)
 
 # runs the program
-mass_convert_xlsx(input("V1 or V2?"))
+mass_convert_xlsx()
 
 print(".xlsx files converted to .txt")
