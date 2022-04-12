@@ -1,16 +1,5 @@
 @echo off
-py clearer.py
-if %errorlevel% neq 0 (
-	pause
-	exit)
-py input_mover.py
-if %errorlevel% neq 0 (
-	pause
-	exit)
-cd DatavyuToSupercoder
-java -jar DatavyuToSupercoder.jar
-cd ..
-py copier.py
+py rerunner.py True
 if %errorlevel% neq 0 (
 	pause
 	exit)
@@ -24,7 +13,7 @@ if %errorlevel% neq 0 (
 	pause
 	exit)
 cd ..
-py output_mover.py
+py rerunner.py False
 if %errorlevel% neq 0 (
 	pause
 	exit)
