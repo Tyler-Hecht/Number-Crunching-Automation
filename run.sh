@@ -1,19 +1,16 @@
 #!/bin/bash
-python3 clearer.py
+cd orders 
+python3 trialtypes_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-python3 input_mover.py
+python3 orders_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-cd DatavyuToSupercoder
-java -jar DatavyuToSupercoder.jar
-cd ..
-python3 copier.py
+cd .. 
+cd input 
+python3 xlsx_to_txt_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-cd Facetalk
-python3 catcher.py
+python3 participants_automation_mac.py 
 if [ $? -ne 0 ]; then exit 0; fi 
-python3 facetalk.py
-if [ $? -ne 0 ]; then exit 0; fi 
-cd ..
-python3 output_mover.py
-if [ $? -ne 0 ]; then exit 0; fi 
-pause
+cd .. 
+javac Cruncher.java 
+java Cruncher 
+echo NUMBER CRUNCHING COMPLETE! 

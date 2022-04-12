@@ -1,31 +1,25 @@
 @echo off
-py clearer.py
+cd orders
+py trialtypes_automation.py
+if %errorlevel% neq 0 (
+	pause 
+	exit)
+py orders_automation.py
 if %errorlevel% neq 0 (
 	pause
 	exit)
-py input_mover.py
+cd..
+cd input
+py xlsx_to_txt.py
 if %errorlevel% neq 0 (
 	pause
 	exit)
-cd DatavyuToSupercoder
-java -jar DatavyuToSupercoder.jar
-cd ..
-py copier.py
+py participants_automation.py
 if %errorlevel% neq 0 (
 	pause
 	exit)
-cd Facetalk
-py catcher.py
-if %errorlevel% neq 0 (
-	pause
-	exit)
-py facetalk.py
-if %errorlevel% neq 0 (
-	pause
-	exit)
-cd ..
-py output_mover.py
-if %errorlevel% neq 0 (
-	pause
-	exit)
+cd..
+javac Cruncher.java
+java Cruncher
+echo NUMBER CRUNCHING COMPLETE!
 pause
