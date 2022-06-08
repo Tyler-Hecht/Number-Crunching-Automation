@@ -9,4 +9,4 @@ https://docs.google.com/document/d/1nmJQCOolil0shqNdtKSfpjnUQuOlYzMQQk3bO9XSZrY/
 Here is a walkthrough video:\
 https://drive.google.com/file/d/1iAVVrmjPGbbve418nCa9Qr0Zm7mAqftc/view?usp=sharing
 
-Disclaimer: I did not make the Java files, aside from a slight edit to Cruncher.java (see line 34). Credit for those goes to Aashaka Desai.
+I did not make the Java files, aside from a slight edit to Cruncher.java (see line 34). Credit for those goes to Aashaka Desai.
